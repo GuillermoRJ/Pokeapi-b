@@ -10,7 +10,7 @@ interface PokemonCardProps {
 export default function PokemonCard(props: PokemonCardProps) {
   const id = props.url.at(-2);
   const ImageURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-  const PokemonURL = "http://localhost:8081/pokemon/"
+  const PokemonURL = "/pokemon/"
   return (
     <Pressable
       style={{ padding: 10, borderWidth: 1 }}

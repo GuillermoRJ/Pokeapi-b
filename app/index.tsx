@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { View } from "react-native";
+import { Button, ScrollView } from "react-native";
 import PokemonCard from "../components/PokemonCard";
+import { router } from "expo-router";
 
 export default function Index() {
   const [results, setResults] = useState<any[]>([]);
@@ -19,10 +20,14 @@ export default function Index() {
     console.log(data);
   };
   return (
-    <View>
+    <ScrollView>
+      <Button title="new Screen" onPress={() => router.push("/new-screen")}></Button>
+      <Button title="pokemon" onPress={() => router.push("/pokemon")}></Button>
+      <Button title="dynamic route" onPress={() => router.push("/pokemon/[name]")}></Button>
+
       {results.map((pokemon) => (
         <PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url} />
       ))}
-    </View>
+    </ScrollView>
   );
 }

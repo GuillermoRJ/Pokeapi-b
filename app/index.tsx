@@ -21,7 +21,6 @@ export default function Index() {
   };
   return (
     <ScrollView>
-      <Button title="new Screen" onPress={() => router.push("/new-screen")}></Button>
       <Button title="pokemon" onPress={() => router.push("/pokemon")}></Button>
       <Button title="dynamic route" onPress={() => router.push("/pokemon/[name]")}></Button>
 
